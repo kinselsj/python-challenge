@@ -5,6 +5,8 @@ import csv
 # Path to collect data from the Resources folder
 budget_csv = os.path.join('budget_data.csv')
 
+
+
 # Read in the CSV file
 with open(budget_csv, 'r') as csvfile:
 
@@ -12,14 +14,17 @@ with open(budget_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
     header = next(csvreader)
-
+    months = 0
+    
         # Loop through the data
     for row in csvreader:
-
+      
 #The total number of months included in the dataset
-        month = 
+        
+        months += 1
 
 #The net total amount of "Profit/Losses" over the entire period
+        
 
 #The average of the changes in "Profit/Losses" over the entire period
 
@@ -27,3 +32,5 @@ with open(budget_csv, 'r') as csvfile:
 
 #The greatest decrease in losses (date and amount) over the entire period
 
+
+print (f"Total Months: {months}")
