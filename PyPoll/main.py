@@ -29,20 +29,28 @@ with open(election_data, 'r') as csvfile:
         else: 
             vote_count [candidates] = 1
 # The percentage of votes each candidate won
-        khan_percent = vote_count["Khan"]/len(total_votes)
-        correy_percent = vote_count["Correy"]/len(total_votes)
-        li_percent = vote_count["Li"]/len(total_votes)
-        otooley_percent = vote_count["O'Tooley"]/len(total_votes)
+    khan_vote = vote_count["Khan"]
+    khan_percent = '{percent:.3%}'.format(percent=khan_vote/len(total_votes))
+    correy_vote = vote_count["Correy"]
+    correy_percent = '{percent:.3%}'.format(percent=correy_vote/len(total_votes))
+    li_vote = vote_count["Li"]
+    li_percent = '{percent:.3%}'.format(percent=li_vote/len(total_votes))
+    otooley_vote = vote_count["O'Tooley"]
+    otooley_percent = '{percent:.3%}'.format(percent=otooley_vote/len(total_votes))
 
 # The total number of votes each candidate won
 
 # The winner of the election based on popular vote.
-        winner = max(vote_count.items(), key=operator.itemgetter(1))[0]
+    winner = max(vote_count.items(), key=operator.itemgetter(1))[0]
 
-print (len(total_votes))
-print (vote_count)
-print (khan_percent)
-print (correy_percent)
-print (li_percent)
-print (otooley_percent)
-print (winner)
+print ("Election Results")
+print ("-----------------------")
+print (f"Total Votes: {len(total_votes)}")
+print ("-----------------------")
+print (f"Khan: {khan_percent} ({khan_vote})")
+print (f"Correy: {correy_percent} ({correy_vote})")
+print (f"Li: {li_percent} ({li_vote})")
+print (f"O'Tooley: {otooley_percent} ({otooley_vote})")
+print ("-----------------------")
+print (f"winner: {winner}")
+print ("-----------------------")
