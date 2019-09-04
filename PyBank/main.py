@@ -2,7 +2,7 @@ import os
 import csv
 
 
-# Path to collect data from the Resources folder
+# Path to collect data
 budget_csv = os.path.join('budget_data.csv')
 
 
@@ -38,8 +38,10 @@ with open(budget_csv, 'r') as csvfile:
         low_proft = min(change_pl)
         low_month = str(months[change_pl.index(min(change_pl))])
 
+print ("Financial Analysis")
+print ("-------------------------------")
 print (f"Total Months: {len(months)}")
-print (f"Total: {sum(net_pl)}")
-print (f"Average Change: {round(average_pl,2)}")
-print (high_profit, high_month)
-print (low_proft, low_month)
+print (f"Total: ${round(sum(net_pl))}")
+print (f"Average Change: ${round(average_pl,2)}")
+print (f"Greatest Increase in Profits: {high_month}, (${round(high_profit)})")
+print (f"Greatest Decrease in Profits: {low_month}, (${round(low_proft)})")
