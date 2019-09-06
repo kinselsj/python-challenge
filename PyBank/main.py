@@ -32,11 +32,11 @@ with open(budget_csv, 'r') as csvfile:
         change_pl.append(net_pl[i] - net_pl[i-1])
         average_pl = sum(change_pl) / len(change_pl)
 #The greatest increase in profits (date and amount) over the entire period
-        high_profit = max(change_pl)
-        high_month = str(months[change_pl.index(max(change_pl))])
+high_profit = max(change_pl)
+high_month = str(months[change_pl.index(max(change_pl))+1])
 #The greatest decrease in losses (date and amount) over the entire period
-        low_proft = min(change_pl)
-        low_month = str(months[change_pl.index(min(change_pl))])
+low_proft = min(change_pl)
+low_month = str(months[change_pl.index(min(change_pl))+1])
 
 print ("Financial Analysis")
 print ("-------------------------------")
