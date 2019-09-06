@@ -12,9 +12,9 @@ with open(budget_csv, 'r') as csvfile:
 
     # Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=',')
-
-    header = next(csvreader)
     months = []
+    header = next(csvreader)
+    
     net_pl = []
     change_pl = []
         # Loop through the data
@@ -45,3 +45,12 @@ print (f"Total: ${round(sum(net_pl))}")
 print (f"Average Change: ${round(average_pl,2)}")
 print (f"Greatest Increase in Profits: {high_month}, (${round(high_profit)})")
 print (f"Greatest Decrease in Profits: {low_month}, (${round(low_proft)})")
+
+f= open("Financial Analysis", 'w')
+f.write ("-------------------------------\n")
+f.write (f"Total Months: {len(months)}\n")
+f.write (f"Total: ${round(sum(net_pl))}\n")
+f.write (f"Average Change: ${round(average_pl,2)}\n")
+f.write (f"Greatest Increase in Profits: {high_month}, (${round(high_profit)})\n")
+f.write (f"Greatest Decrease in Profits: {low_month}, (${round(low_proft)})\n")
+f.close()

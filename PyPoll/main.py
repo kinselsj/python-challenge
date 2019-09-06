@@ -1,6 +1,7 @@
 import os
 import csv
 import operator
+import sys
 
 #Path to collect data
 election_data = os.path.join('election_data.csv')
@@ -43,7 +44,7 @@ with open(election_data, 'r') as csvfile:
 # The winner of the election based on popular vote.
     winner = max(vote_count.items(), key=operator.itemgetter(1))[0]
 
-print ("Election Results")
+print ("Election Results"),
 print ("-----------------------")
 print (f"Total Votes: {len(total_votes)}")
 print ("-----------------------")
@@ -54,3 +55,17 @@ print (f"O'Tooley: {otooley_percent} ({otooley_vote})")
 print ("-----------------------")
 print (f"winner: {winner}")
 print ("-----------------------")
+
+f= open("Election Results", 'w')
+f.write ("Election Results\n"),
+f.write ("-----------------------\n")
+f.write (f"Total Votes: {len(total_votes)}\n")
+f.write ("-----------------------\n")
+f.write (f"Khan: {khan_percent} ({khan_vote})\n")
+f.write (f"Correy: {correy_percent} ({correy_vote})\n")
+f.write (f"Li: {li_percent} ({li_vote})\n")
+f.write (f"O'Tooley: {otooley_percent} ({otooley_vote})\n")
+f.write ("-----------------------\n")
+f.write (f"winner: {winner}\n")
+f.write ("-----------------------\n")
+f.close()
